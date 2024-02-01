@@ -17,7 +17,12 @@
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <!-- <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script> -->
 </head>
-
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.min.css
+" rel="stylesheet">
 <body>
   <div id="preloader">
     <span class="ring">

@@ -1,3 +1,4 @@
+
 <br>
 <div id="content">
     <div class="container">
@@ -14,13 +15,14 @@
                                 <p class="text-7 fw-500 text-dark mb-0 mx-2">Sign In</p>
                             </div>
                             <form id="HomeSignInForm">
+                            <input type="hidden" id="whatbtndo" value="0" />
                                 <div>
-                                    <input type="text" class="form-control" id="Home_SignIn__Username_txt" placeholder="Enter an email or number">
+                                    <input type="text" class="form-control" name="Mobile_number_txt" id="Mobile_number_txt" placeholder="Enter an email or number">
                                 </div>
                                 <div class="text-danger text-2">Enter an email or phone number</div>
                                 <div class="text-danger text-2">Couldn't find your Tradgo Account</div>
                                 <div class="position-relative d-flex mt-3">
-                                    <input type="password" class="form-control" id="signUp_password" minlength="6" autocomplete="new-password" placeholder="Password" value="" name="password">
+                                    <input type="password" class="form-control" id="password_txt" minlength="6" autocomplete="new-password" placeholder="Password" value="" name="password_txt">
                                     <i class="eye-icon far fa-eye" style="position: absolute; top: 50%; right: 10px; transform: translate(-50%, -50%);" id="signUp_showPassword"></i>
                                 </div>
                                 <div class="text-danger text-2">Enter a password</div>
@@ -38,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div class="d-grid my-2">
-                                    <button class="btn btn-primary" type="submit">Sign In</button>
+                                    <button class="btn btn-primary" type="button" onclick="Login()">Sign In</button>
                                 </div>
                             </form>
                             <div class="mt-3">You don't have an account yet, but you can create one easily by
@@ -52,3 +54,7 @@
         </div>
     </div>
 </div>
+
+<script src="<?php echo base_url()?>assest/Js/Auth/Signin.js">
+
+</script>
