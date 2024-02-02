@@ -1,8 +1,10 @@
 <div id="content">
-  <div class="pt-4 pb-5" style="background: linear-gradient(180deg, #1B1464, #1C3D85);box-shadow: 0px 6px 4px 0px rgba(30, 93, 159, 0.50) inset;">
+  <div style="background: linear-gradient(180deg, #1B1464, #1C3D85);box-shadow: 0px 6px 4px 0px rgba(30, 93, 159, 0.50) inset;">
+  <!-- <div class="pt-4 pb-5" style="background: linear-gradient(180deg, #1B1464, #1C3D85);box-shadow: 0px 6px 4px 0px rgba(30, 93, 159, 0.50) inset;"> -->
     <!-- bg-secondary -->
     <div class="container">
-      <div class="section py-4">
+      <div class="section px-0 py-3">
+      <!-- <div class="section py-4"> -->
         <div class="container">
           <ul class="nav secondary-nav alternate" id="myTab" role="tablist">
             <li class="nav-item active">
@@ -314,7 +316,6 @@
                     <img src="" alt="" height="40px" width="40px">
                     <div class="px-3">
                       <h6 class="d-flex text-center mt-2">Videocon DTH TV</h6>
-                      <!-- <h6 class="d-flex text-center mt-2">Videocon DTH TV</h6> -->
                       <h6 class="text-primary mt-2">Sanjay</h6>
                     </div>
                   </div>
@@ -728,7 +729,7 @@
             <!-- More Button -->
             <div class="bg-white shadow-md rounded p-4">
               <h2 class="text-4 mb-3">More Service</h2>
-              <ul class="grid-container nav dashboard" id="myTab" role="tablist">
+              <ul class="grid-container nav dashboard" style="font-size: 14px;" id="myTab" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link" id="Postpaid-recharge-tab" data-bs-toggle="tab" href="#Postpaid-recharge" aria-controls="Postpaid-recharge">
                     <div><img src="images/recharge/Postpaid.png" alt=""></div>

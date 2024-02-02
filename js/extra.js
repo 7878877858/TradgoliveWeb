@@ -36,32 +36,51 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
 // FOR REOPEN MORE CONTAINER --------------------------------------------------
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const moreRechargeTab = document.getElementById('More-recharge-tab');
+//     const moreServiceContent = document.getElementById('More');
+
+//     moreRechargeTab.addEventListener('click', function (event) {
+//         event.preventDefault();
+
+//         // Get the currently active tab (if any)
+//         const activeTab = document.querySelector('.tab-pane.fade.show.active');
+
+//         // Remove the 'active' class from the currently active tab content
+//         if (activeTab) {
+//             activeTab.classList.remove('active', 'show');
+//         }
+
+//         // Show the 'More Service' content
+//         moreServiceContent.classList.add('active', 'show');
+//     });
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
     const moreRechargeTab = document.getElementById('More-recharge-tab');
     const moreServiceContent = document.getElementById('More');
 
+    let isVisible = false; // Variable to track visibility state
+
     moreRechargeTab.addEventListener('click', function (event) {
         event.preventDefault();
 
-        // Get the currently active tab (if any)
-        const activeTab = document.querySelector('.tab-pane.fade.show.active');
-
-        // Remove the 'active' class from the currently active tab content
-        if (activeTab) {
-            activeTab.classList.remove('active', 'show');
+        // Toggle visibility
+        if (isVisible) {
+            moreServiceContent.classList.remove('active', 'show');
+            isVisible = false;
+        } else {
+            moreServiceContent.classList.add('active', 'show');
+            isVisible = true;
         }
-
-        // Show the 'More Service' content
-        moreServiceContent.classList.add('active', 'show');
     });
 });
 
-// FOR REMOVE ALL ACTIVE CLASS --------------------------------------------------
 
+
+// FOR REMOVE ALL ACTIVE CLASS --------------------------------------------------
 // Get all elements with class "nav-link"
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -83,7 +102,6 @@ navLinks.forEach(link => {
 });
 
 // FOR RESRT ALL FORM --------------------------------------------------
-
 document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -98,8 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
-
 
 // FOR DTH Customer Info --------------------------------------------------
 $(document).ready(function () {

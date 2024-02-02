@@ -1541,8 +1541,8 @@ html[dir="rtl"] .login-signup ul.navbar-nav>li.dropdown:not(.notifications)>.dro
 
 .secondary-nav.nav .nav-link {
   text-align: center;
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 14px;
+  font-size: 0.9rem;
   margin: 0 10px;
   padding: .6rem 15px;
   color: #8298af;
