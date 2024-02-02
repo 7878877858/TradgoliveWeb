@@ -65,7 +65,7 @@
         const hiddenPart = '*'.repeat(digitsToHide);
         const displayedNumber = "91" + numberString.slice(0, startPosition) + hiddenPart + numberString.slice(startPosition + digitsToHide);
         $('#user_mobile_number').text(displayedNumber);
-        alert(displayedNumber);
+        //alert(displayedNumber);
     } else {
         console.error('The "number" parameter is not present in the URL.');
     }
