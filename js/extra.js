@@ -99,77 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// FOR --------------------------------------------------
-document.addEventListener('DOMContentLoaded', function () {
-    let password = document.getElementById('signUp_password');
-    let showPassword = document.getElementById('signUp_showPassword');
 
-    showPassword.addEventListener('click', function () {
-        if (password.type === 'password') {
-            password.type = 'text'; // Show the password
-            showPassword.classList.remove('far', 'fa-eye');
-            showPassword.classList.add('fas', 'fa-eye-slash');
-        } else {
-            password.type = 'password'; // Hide the password
-            showPassword.classList.remove('fas', 'fa-eye-slash');
-            showPassword.classList.add('far', 'fa-eye');
-        }
-    });
-});
-
-// FOR --------------------------------------------------
-document.addEventListener('DOMContentLoaded', function () {
-    let ConfirmPassword = document.getElementById('signUp_ConfirmPassword');
-    let showConfirmPassword = document.getElementById('signUp_showConfirmPassword');
-
-    showConfirmPassword.addEventListener('click', function () {
-        if (ConfirmPassword.type === 'password') {
-            ConfirmPassword.type = 'text'; // Show the password
-            showConfirmPassword.classList.remove('far', 'fa-eye');
-            showConfirmPassword.classList.add('fas', 'fa-eye-slash');
-        } else {
-            ConfirmPassword.type = 'password'; // Hide the password
-            showConfirmPassword.classList.remove('fas', 'fa-eye-slash');
-            showConfirmPassword.classList.add('far', 'fa-eye');
-        }
-    });
-});
-
-// FOR --------------------------------------------------
-document.addEventListener('DOMContentLoaded', function () {
-    let password = document.getElementById('ConfirmOTP_password');
-    let showPassword = document.getElementById('ConfirmOTP_showPassword');
-
-    showPassword.addEventListener('click', function () {
-        if (password.type === 'password') {
-            password.type = 'text'; // Show the password
-            showPassword.classList.remove('far', 'fa-eye');
-            showPassword.classList.add('fas', 'fa-eye-slash');
-        } else {
-            password.type = 'password'; // Hide the password
-            showPassword.classList.remove('fas', 'fa-eye-slash');
-            showPassword.classList.add('far', 'fa-eye');
-        }
-    });
-});
-
-// FOR --------------------------------------------------
-document.addEventListener('DOMContentLoaded', function () {
-    let ConfirmPassword = document.getElementById('ConfirmOTP_ConfirmPassword');
-    let showConfirmPassword = document.getElementById('ConfirmOTP_showConfirmPassword');
-
-    showConfirmPassword.addEventListener('click', function () {
-        if (ConfirmPassword.type === 'password') {
-            ConfirmPassword.type = 'text'; // Show the password
-            showConfirmPassword.classList.remove('far', 'fa-eye');
-            showConfirmPassword.classList.add('fas', 'fa-eye-slash');
-        } else {
-            ConfirmPassword.type = 'password'; // Hide the password
-            showConfirmPassword.classList.remove('fas', 'fa-eye-slash');
-            showConfirmPassword.classList.add('far', 'fa-eye');
-        }
-    });
-});
 
 // FOR DTH Customer Info --------------------------------------------------
 $(document).ready(function () {

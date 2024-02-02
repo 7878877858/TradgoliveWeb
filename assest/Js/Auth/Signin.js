@@ -5,14 +5,13 @@ function showLoader() {
     $('#preloader').show();
 }
 
-// Function to hide the loader
 function hideLoader() {
     $('#preloader').hide();
 }
 $(document).ready(function () {
 
 });
-
+//<--------Login Ajax Start------->
 function Login() {
     event.preventDefault();
     var mobile_number = $('#Mobile_number_txt').val();
@@ -77,7 +76,9 @@ function Login() {
     });
 
 }
+//<--------Login Ajax End------->
 
+//<--------Registration Ajax Start------->
 function getCurrentLocation(callback) {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -96,6 +97,7 @@ function getCurrentLocation(callback) {
     }
 }
 // Now you can use latlog.latitude and latlog.longitude in your registration logic.
+
 function Registration() {
     //alert('here');
     event.preventDefault();
@@ -139,7 +141,7 @@ function Registration() {
                         }).then((result) => {
                             if (result.value) {
                                 var redirectTo = response.redirectTo || 'SignUpOtp';
-                                alert(redirectTo + "?number=" + whatsapp_no);
+                                //alert(redirectTo + "?number=" + whatsapp_no);
                                 window.location.href = redirectTo + "?number=" + whatsapp_no;
                             }
                         });
@@ -243,3 +245,97 @@ async function formToJson(formId) {
     });
     return jsonData;
 }
+//<--------Registration Ajax End------->
+
+//<--------ForgotPassWord Ajax Start------->
+function Forgotpassword() {
+    var Forgot_Mobile_no = $('#ForgotPassword__Username_txt').val();
+    localStorage.setItem('Forgot_Mobile_no', Forgot_Mobile_no);
+    showLoader();
+    $.ajax({
+        url: base_url + 'v1/Forgetpass',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        caches: false,
+        data: JSON.stringify({
+            Mobile: Forgot_Mobile_no
+        }),
+        success: function (response) {
+            try {
+                console.log(response);
+                var json_data = JSON.parse(response);
+                var message = json_data.message;
+                var otp = json_data.otp;
+                localStorage.setItem('Forgot_otp', otp);
+                $('#hiddenforgotpass').val(json_data.statuscode);
+                if (json_data.statuscode == 'TXN') {
+                    Swal.fire({
+                        icon: 'success',
+                        text: message
+                    }).then((result) => {
+                        if (result.value) {
+                            var redirectTo = response.redirectTo || 'ForgotPasswordOtp';
+                            alert(redirectTo + "?Forgot_Mobile_no=" + Forgot_Mobile_no);
+                            window.location.href = redirectTo + "?Forgot_Mobile_no=" + Forgot_Mobile_no;
+                        }
+                    })
+                } else if (json_data.statuscode == 'ERR') {
+                    Swal.fire({
+                        icon: 'error',
+                        text: message
+                    })
+                }
+
+            } catch (error) {
+                console.error("An error occurred:", error);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error("AJAX Error:", textStatus, errorThrown);
+            hideLoader();
+
+        },
+        complete: function () {
+            hideLoader();
+        }
+    })
+}
+
+async function forgotverifyotp() {
+    var storedForgotMobileNo = localStorage.getItem('whatsapp_no');
+    var storeForgototp = localStorage.getItem('Forgot_otp')
+    var { fotp, fotp2, fotp3, fotp4, fotp5, fotp6 } = await formToJson('otp-screen');
+    const full_otp = `${fotp}${fotp2}${fotp3}${fotp4}${fotp5}${fotp6}`;
+    showLoader();
+    $.ajax({
+        url: base_url + 'Forgetpass/validate_otp',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        caches: false,
+        data: JSON.stringify({
+            Mobile: storedForgotMobileNo,
+            otp: full_otp,
+            password: storeForgototp
+        }),
+        success: function (response) {
+            try {
+                console.log(response);
+            } catch (error) {
+
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error("AJAX Error:", textStatus, errorThrown);
+            hideLoader();
+
+        },
+        complete: function () {
+            hideLoader();
+        }
+    })
+}
+//<--------ForgotPassWord Ajax End------->

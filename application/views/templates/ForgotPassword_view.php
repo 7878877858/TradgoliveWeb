@@ -14,13 +14,14 @@
                                 <p class="text-7 fw-500 text-dark mb-0 mx-2">Forgot Password</p>
                             </div>
                             <form id="HomeForgotPasswordForm">
+                            <input type="hidden" id="hiddenforgotpass" value="0" />
                                 <div>
-                                    <input type="text" class="form-control" id="Home_ForgotPassword__Username_txt" placeholder="Enter an email or number">
+                                    <input type="text" class="form-control" name="ForgotPassword__Username_txt" id="ForgotPassword__Username_txt" placeholder="Enter an email or number">
                                 </div>
                                 <div class="text-danger text-2">Enter an email or phone number</div>
                             </form>
                             <div class="d-grid my-4">
-                                <button class="btn btn-primary" type="submit">Submit</button>
+                                <button class="btn btn-primary" type="button" onclick="Forgotpassword()">Submit</button>
                             </div>
                             <p class="text-center mb-0">
                                 <a class="btn-link" href="Signin">Return to Sign In</a>
@@ -32,3 +33,4 @@
         </div>
     </div>
 </div>
+<script src="<?php echo base_url()?>assest/Js/Auth/Signin.js"></script>
