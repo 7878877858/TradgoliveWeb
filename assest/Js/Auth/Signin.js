@@ -1,5 +1,5 @@
 
-var base_url = "http://164.52.204.166/";
+var base_url = "http://localhost/TradgoRechargeWeb/";
 
 function showLoader() {
     $('#preloader').show();
@@ -19,7 +19,7 @@ function Login() {
 
     showLoader();
     $.ajax({
-        url: base_url + 'v1/Login',
+        url: base_url + 'Signin/Login',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -304,13 +304,14 @@ function Forgotpassword() {
 }
 
 async function forgotverifyotp() {
-    var storedForgotMobileNo = localStorage.getItem('whatsapp_no');
+    var storedForgotMobileNo = localStorage.getItem('Forgot_Mobile_no');
+    alert(storedForgotMobileNo);
     var storeForgototp = localStorage.getItem('Forgot_otp')
     var { fotp, fotp2, fotp3, fotp4, fotp5, fotp6 } = await formToJson('otp-screen');
     const full_otp = `${fotp}${fotp2}${fotp3}${fotp4}${fotp5}${fotp6}`;
     showLoader();
     $.ajax({
-        url: base_url + 'Forgetpass/validate_otp',
+        url: base_url + 'v1/Forgetpass/validate_otp',
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
